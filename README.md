@@ -1,4 +1,4 @@
-# Calculator
+# 🧮 Calculator
 
 This is an application that has the 4 basic functions of a calculator (addition, subtraction, multiplication and division).
 The calculator has a screen where the operations and results of them are displayed, it starts at 0.

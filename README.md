@@ -12,4 +12,3 @@ It can perform operations with immediate results.
 
 - To do
   Need to develop calculation of fractions.
-  It is necessary to develop a validation that doesn't allow printing an arithmetic sign twice in the screen.

@@ -1,6 +1,6 @@
 import calculator from "./calculator.js";
 
-let { total, sum, rest, multiply, divide, reset } = calculator();
+let { total, sum, rest, multiply, divide/* , reset  */} = calculator();
 let sign = '';
 let listOfNumbers = [];
 
@@ -58,15 +58,16 @@ numberId.addEventListener('click', (e) => {
 let operatorId = document.querySelector('.ct-operators');
 operatorId.addEventListener('click', (e) => {
     if (e.target.classList.contains('ct-operator')) {
-        printNumber(e.target.id);
-        fillOperation(e.target.id);
+        if (listOfNumbers.includes('+') || listOfNumbers.includes('-') || listOfNumbers.includes('x') || listOfNumbers.includes('/')) {
+            getOperation(listOfNumbers, sign);
+            document.getElementById('txt-total').innerHTML = total;
+            listOfNumbers = [total];
+        } else {
+            printNumber(e.target.id);
+            fillOperation(e.target.id);
+        }
     };
 });
-
-
-const disableSigns = () => {
-    let totalTxt = document.getElementById('txt-total');
-}
 
 //Fill array listOfNumbers
 function fillOperation(value) {
@@ -79,13 +80,11 @@ function getOperation(array, sign) {
     let firstNum = array.splice(0, index).join(''); 
     total = parseInt(firstNum);
     let secondNum = array.splice(1).join(''); 
-
     array[0] === '+' ? total = sum(total, parseInt(secondNum)) :
         array[0] === '-' ? total = rest(total, parseInt(secondNum)) :
             array[0] === 'x' ? total = multiply(total, parseInt(secondNum)) :
                 array[0] === '/' ? total = divide(total, parseInt(secondNum)) :
-                    0;
+                    total = 0;
+    array = [];
     return total;
 };
-
-

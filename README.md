@@ -5,10 +5,10 @@ The calculator has a screen where the operations and results of them are display
 Has a button that allows you to reset to 0 (button C) and another button with an equal sign that will show the result of the operation you perform on the screen.
 It can perform operations with immediate results.
 
-- Tech
+- Tech:
   It was developed with HTML, CSS and javascript.
   It was developed with TDD, using Jest v.29.3.1
   ESModules was used with babel v.7.20.2 as compiler.
 
-- To do
+- To do:
   Need to develop calculation of fractions.
